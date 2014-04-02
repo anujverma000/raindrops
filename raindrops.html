@@ -1,0 +1,156 @@
+<html>
+	<head>		
+		<title>RainDrops</title>
+		<style type="text/css">
+			body,html{
+				padding: 0;
+				margin: 0;
+				min-height: 100%;
+				background: #E2E2E2;
+			}
+			#game {
+				clear: both;
+				height: auto;
+				margin: 0 auto;
+				margin-top: 100px;
+				width: 850px;
+			}
+			.header {				
+				overflow: hidden;
+				background: #3592dd;				
+				color: #fff;
+				font: 24px Sans-Serif;
+				margin: 0;
+				padding: 20;
+				text-align: center;
+			}
+			table{
+				border: 2px solid #4183C4;
+				background: #fff;
+				border-radius: 5px; 
+			}
+			table tr td.actionPanel{
+				border-left: 2px solid #4183C4;
+				padding: 10px;
+				vertical-align: top;
+			}
+			#scorePanel{
+				padding: 20px 0 50px 0;
+				font: bold 18px sans-serif;
+			}
+			.button{
+				width:40px;
+				height:30px;
+				border:none;
+				border-radius:8px;
+				margin-left:17px;
+				cursor:pointer;
+				border-top:2px solid transparent;
+			}
+			.button.black{
+				color:white;
+				background-color:303030;
+				border-bottom:black 2px solid;
+				border-top:2px 303030 solid;
+			}
+			.black:active{
+				border-top:black 2px solid;
+				border-bottom:#303030 2px solid;
+			}
+			.button.gray{				
+				color:white;
+				background-color:#6f6f6f;
+				border-bottom:black 2px solid;
+				border-top:2px #6f6f6f solid;
+			}
+			.gray:active{
+				border-top:black 2px solid;
+				border-bottom:2px #6f6f6f solid;
+			}
+			.button.orange{				
+				color:black;
+				background-color:FF9933;
+				border-bottom:black 2px solid;
+				border-top:2px FF9933 solid;
+			}
+			.orange:active{
+				border-top:black 2px solid;
+				border-bottom:FF9933 2px solid;
+			}
+			.display{				
+				width:220px;
+				left:15px;
+				top:20px;
+				height:40px;
+			}
+			.display input{
+				left:2px;
+				top:2px;
+				height:35px;
+				color:black;				
+				font-size:21px;
+				text-align:center;
+			} 
+			#footer {				
+				background-color: #ecf2f8;
+				color: #333;			
+				bottom: 0;
+				height: 30px;
+				padding: 7px 0;
+				position: fixed;
+				width: 100%;
+			}
+			#footer p {				
+				font: 12px Sans-Serif;;				
+				vertical-align: baseline;
+				margin: 0;
+				padding: 0;
+				text-align: center;				
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="header">HTML5 Canvas Raindrops Game</h1>
+		<div id="game">	
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td>
+		    			<canvas width='480' height='500' id="gameCanvas"></canvas>
+					</td>
+					<td class="actionPanel">
+						<div id="scorePanel">Score: <span id="score">0</span></div>
+						<div class="display"><input type="text" readonly size="18" id="puzzleResult"></div>
+						<p>
+							<input type="button" class="button black" value="7" onclick='addKeyVal("7")'>
+							<input type="button" class="button black" value="8" onclick='addKeyVal("8")'>
+					     	<input type="button" class="button black" value="9" onclick='addKeyVal("9")'>
+					     </p>
+					     <p>
+					     	<input type="button" class="button black" value="4" onclick='addKeyVal("4")'>
+					     	<input type="button" class="button black" value="5" onclick='addKeyVal("5")'>
+					    	<input type="button" class="button black" value="6" onclick='addKeyVal("6")'>    
+					    </p>
+					    <p>
+					    	<input type="button" class="button black" value="1" onclick='addKeyVal("1")'>
+					    	<input type="button" class="button black" value="2" onclick='addKeyVal("2")'>
+					    	<input type="button" class="button black" value="3" onclick='addKeyVal("3")'>
+					    </p>
+					    <p>
+					    	<input type="button" class="button black" value="0" onclick='addKeyVal("0")'>
+					    	<input type="button" class="button gray" value="Clear" onclick='clearVal()'>
+					    	<input type="button" class="button orange" value="Enter" onclick='validateVal()'>    	
+					    </p>
+		    		</td>	    		
+				</tr>
+			</table>
+		</div>
+		<div id="footer">
+			<p>
+				Best viewed on <strong>-webkit- </strong> and <strong>-moz-</strong> supported browsers.
+			</p>
+		</div>		
+		<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="jquery.hotkeys.js"></script>		
+		<script type="text/javascript" src="main.js"></script>
+	</body>	
+</html>
