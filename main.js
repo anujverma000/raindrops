@@ -31,6 +31,7 @@ function restartGame(){
 	gameRunning = true;
 	$("#score").text("0");
 	$("canvas").unbind('click');
+	speed = 2;
 	bottomStack.height = 0;
 	interval = setInterval(function() {
 	  update();
@@ -111,7 +112,7 @@ function validateVal(){
    		updateScore();   		
    		BUBBLE_Y = 0;
 	}
-	$("#puzzleResult").val("");
+	clearVal();
 }
 function updateScore(){
 	var score = $("#score").text();
